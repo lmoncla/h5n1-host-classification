@@ -1,0 +1,246 @@
+{
+  "user": "guest",
+  "pathogen": {
+    "flu": {
+      "category": {
+        "avian": {
+          "subtype": {
+            "h5n1": {
+              "segment": {
+                "ha": "",
+                "mp": "",
+                "na": "",
+                "ns": "",
+                "np": "",
+                "pa": "",
+                "pb1": "",
+                "pb2": "",
+                "default": "ha"
+              }
+            },
+            "h7n9": {
+              "segment": {
+                "ha": "",
+                "mp": "",
+                "na": "",
+                "ns": "",
+                "np": "",
+                "pa": "",
+                "pb1": "",
+                "pb2": "",
+                "default": "ha"
+              }
+            },
+            "h9n2": {
+              "segment": {
+                "ha": "",
+                "mp": "",
+                "na": "",
+                "ns": "",
+                "np": "",
+                "pa": "",
+                "pb1": "",
+                "pb2": "",
+                "default": "ha"
+              }
+            },
+            "default": "h5n1"
+          }
+        },
+        "seasonal": {
+          "lineage": {
+            "h3n2": {
+              "segment": {
+                "ha": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "default": "3y"
+                  }
+                },
+                "na": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "default": "3y"
+                  }
+                },
+                "default": "ha"
+              }
+            },
+            "h1n1pdm": {
+              "segment": {
+                "ha": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "pandemic": "",
+                    "default": "3y"
+                  }
+                },
+                "na": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "pandemic": "",
+                    "default": "3y"
+                  }
+                },
+                "default": "ha"
+              }
+            },
+            "vic": {
+              "segment": {
+                "ha": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "default": "3y"
+                  }
+                },
+                "na": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "default": "3y"
+                  }
+                },
+                "default": "ha"
+              }
+            },
+            "yam": {
+              "segment": {
+                "ha": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "default": "3y"
+                  }
+                },
+                "na": {
+                  "resolution": {
+                    "2y": "",
+                    "3y": "",
+                    "6y": "",
+                    "12y": "",
+                    "default": "3y"
+                  }
+                },
+                "default": "ha"
+              }
+            },
+            "default": "h3n2"
+          }
+        },
+        "default": "seasonal"
+      }
+    },
+    "enterovirus":{
+      "lineage":{
+        "d68":"",
+        "default":"d68"
+      }
+    },
+    "WNV": {
+      "resolution": {
+        "NA": "",
+        "default": "NA"
+      }
+    },
+    "tb": {
+      "resolution": {
+        "global": "",
+        "default": "global"
+      }
+    },
+    "lassa": {
+      "segment": {
+        "s": "",
+        "l": "",
+        "default": "s"
+      }
+    },
+    "mumps": {
+      "resolution": {
+        "global": "",
+        "na": "",
+        "default": "global"
+      }
+    },
+    "zika": "",
+    "ebola": "",
+    "dengue": {
+      "serotype": {
+        "all": "",
+        "denv1": "",
+        "denv2": "",
+        "denv3": "",
+        "denv4": "",
+        "default": "all"
+      }
+    },
+    "measles": "",
+    "default": "zika"
+  },
+  "splash": [
+    {
+      "img": "img_seasonalinfluenza.png",
+      "url": "/flu/seasonal/h3n2/ha/3y",
+      "title": "Seasonal Influenza"
+    },
+    {
+      "img": "img_wnv.png",
+      "url": "/WNV/NA",
+      "title": "West Nile Virus"
+    },
+    {
+      "img": "img_lassa.jpg",
+      "url": "/lassa",
+      "title": "Lassa"
+    },
+    {
+      "img": "img_mumps.png",
+      "url": "/mumps",
+      "title": "Mumps"
+    },
+    {
+      "img": "img_zika.png",
+      "url": "/zika",
+      "title": "Zika"
+    },
+    {
+      "img": "img_ebola.png",
+      "url": "/ebola",
+      "title": "Ebola"
+    },
+    {
+      "img": "img_dengue.png",
+      "url": "/dengue",
+      "title": "Dengue"
+    },
+    {
+      "img": "img_avianinfluenza.png",
+      "url": "/flu/avian/h7n9/ha",
+      "title": "Avian Influenza"
+    },
+    {
+      "img": "img_measles.png",
+      "url": "/measles",
+      "title": "Measles"
+    }
+  ]
+}
