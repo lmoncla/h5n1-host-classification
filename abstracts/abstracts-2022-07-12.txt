@@ -1,0 +1,35 @@
+18774155
+
+1. Virology. 2008 Oct 25;380(2):243-54. doi: 10.1016/j.virol.2008.07.038. Epub 2008 
+Sep 6.
+
+The development and genetic diversity of H5N1 influenza virus in China,
+1996-2006.
+
+Duan L(1), Bahl J, Smith GJ, Wang J, Vijaykrishna D, Zhang LJ, Zhang JX, Li KS,
+Fan XH, Cheung CL, Huang K, Poon LL, Shortridge KF, Webster RG, Peiris JS, Chen
+H, Guan Y.
+
+Author information: 
+(1)International Institute of Infection and Immunity, Shantou University Medical 
+College, Shantou 515031, Guangdong, China.
+
+Since it was first detected in 1996, the Goose/Guangdong/1/1996 (Gs/GD) H5N1
+influenza virus and its reassortants have spread to over 60 countries, with over 
+20 distinct genetic reassortants previously recognized. However, systematic
+analysis of their interrelationship and the development of genetic diversity have
+not been explored. As each of those reassortants was first detected in China,
+here 318 full-length H5N1 virus genomes isolated from 1996 to 2006 in this region
+were phylogenetically analyzed. Our findings revealed two major group
+reassortment events in 2001 and 2002 that were responsible for the generation of 
+the majority of the 44 distinct Gs/GD genotypes identified, excepting those 1997 
+variants. Genotype replacement and emergence occurred continually, with 34
+transient genotypes detected while only 10 variants were persistent. Two major
+replacements of predominant genotypes were also observed: genotype B replaced by 
+Z in 2002 and then genotype Z replaced by the now predominant genotype V in 2005.
+
+DOI: 10.1016/j.virol.2008.07.038 
+PMCID: PMC2651962
+PMID: 18774155  [Indexed for MEDLINE]
+
+
