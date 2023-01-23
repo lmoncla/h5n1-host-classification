@@ -45,3 +45,4 @@ A/chicken/SaudiArabia/6732-4/2007	domestic	18931064
 A/chicken/SaudiArabia/6732-18/2007	domestic	18931064
 A/houbarabustard/SaudiArabia/6732-1/2007	domestic	18931064
 A/falcon/SaudiArabia/6732-2/2007	domestic	18931064
+A/partridge/Shantou/2886/2003	domestic	18216109

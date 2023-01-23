@@ -145,5 +145,5 @@ pubmed_id	domestic_wild	notes
 19742325	wild	they did surveillance among wild birds in China
 28116911	domestic	domestic pigeons were submitted by their owners for testing in Egypt. Apparently pigeons are sometimes used for racing
 21251691	wild	wild pigeon from Thailand
-
-
+18774155	exclude	this paper is totally legit, but the one hit I got in the data that wasn't classified was a turkey sequence from England that is matched with this paper on Genbank. The paper was all about viruses in China, so I think this sequence is misannotated
+18216109	domestic	surveilled live poultry markets in China from 2001 to 2004

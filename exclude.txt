@@ -12,3 +12,6 @@ A/chicken/Guizhou/02/2013	EPI532495
 A/chicken/Guizhou/03/2013	EPI532496
 A/chicken/Guizhou/04/2013	EPI532497
 A/chicken/Guizhou/05/2013	EPI532498
+
+# clearly a swine sequence that was somehow mislabeled
+A/Swine/Timika/BBVM186B/2007	EPI2035597
