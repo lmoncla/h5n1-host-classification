@@ -1,0 +1,141 @@
+SUBTYPES = ["h5n1"]
+SEGMENTS = ["ha"]
+
+path_to_fauna = '../../../fauna'
+
+rule all:
+    input:
+        metadata_with_clades = expand("results/metadata-with-clade-classified_{subtype}_{segment}.tsv", subtype=SUBTYPES, segment=SEGMENTS)
+
+rule files:
+    params:
+        dropped_strains = "config/dropped_strains_{subtype}.txt",
+        reference = "config/reference_{subtype}_{segment}.gb",
+        colors = "config/colors_{subtype}.tsv",
+        lat_longs = "config/lat_longs_{subtype}.tsv",
+        priorities_file = "config/priorities.txt",
+        auspice_config = "config/auspice_config_{subtype}.json",
+        clades_file = "clade-labeling/h5n1-clades.tsv",
+        avian_synonyms = "config/all-avian-species.txt",
+        strain_fixes = "config/strain-host-fixes.tsv",
+        exclude = "config/exclude.txt",
+        classified_abstracts = "config/abstracts-classified.txt",
+        strain_annotations = "config/strain-specific-annotations.txt",
+        pubmed_ids = "config/pubmed-ids.tsv"
+
+
+files = rules.files.params
+
+def group_by(w):
+    gb = {'h5n1': 'country year domestic_wild'}
+    return gb[w.subtype]
+
+def sequences_per_group(w):
+    spg = {'h5n1': '10'}
+    return spg[w.subtype]
+
+def min_length(w):
+    len_dict = {"pb2": 2100, "pb1": 2100, "pa": 2000, "ha":1600, "np":1400, "na":1270, "mp":900, "ns":800}
+    length = len_dict[w.segment]
+    return(length)
+
+def min_date(w):
+    date = {'h5n1': '1996'}
+    return date[w.subtype]
+
+def traits_columns(w):
+    traits = {'h5n1': 'region domestic_wild'}
+    return traits[w.subtype]
+
+rule download:
+    message: "Downloading sequences from fauna"
+    output:
+        sequences = "data/{subtype}_{segment}.fasta"
+    params:
+        fasta_fields = "strain virus isolate_id collection_date host domestic_status region country division location subtype originating_lab submitting_lab authors INSDC_accession PMID h5_clade",
+        download_by = 'subtype:h5n1'
+    shell:
+        """
+        python3 {path_to_fauna}/vdb/download.py \
+            --database vdb \
+            --virus avian_flu \
+            --fasta_fields {params.fasta_fields} \
+            --select  {params.download_by} locus:{wildcards.segment} \
+            --path data \
+            --fstem {wildcards.subtype}_{wildcards.segment}
+        """
+
+rule parse:
+    message: "Parsing fasta into sequences and metadata"
+    input:
+        sequences = rules.download.output.sequences
+    output:
+        sequences = "results/sequences_{subtype}_{segment}.fasta",
+        metadata = "results/metadata_{subtype}_{segment}.tsv"
+    params:
+        fasta_fields =  "strain virus isolate_id collection_date host domestic_status region country division location subtype originating_lab submitting_lab authors INSDC_accession PMID h5_clade",
+        prettify_fields = "region country division location host originating_lab submitting_lab"
+    shell:
+        """
+        augur parse \
+            --sequences {input.sequences} \
+            --output-sequences {output.sequences} \
+            --output-metadata {output.metadata} \
+            --fields {params.fasta_fields} \
+            --prettify-fields {params.prettify_fields}
+        """
+
+rule update_clades:
+    message: "Finding new h5 strains and annotating their clades with LABEL"
+    input:
+        sequences = "data/{subtype}_{segment}.fasta",
+        metadata = "results/metadata_{subtype}_{segment}.tsv",
+        clades_file = files.clades_file
+    shell:
+        """
+        python clade-labeling/update-clades.py \
+            --metadata {input.metadata} \
+            --sequences {input.sequences} \
+            --clades_file {input.clades_file} \
+            --subtype h5n1 \
+        """
+
+rule add_h5_clade:
+    message: "Adding in a column for h5 clade numbering"
+    input:
+        metadata = rules.parse.output.metadata,
+        clades_file = files.clades_file
+    output:
+        metadata= "results/metadata-with-clade_{subtype}_{segment}.tsv"
+    shell:
+        """
+        python clade-labeling/add-clades.py \
+            --metadata {input.metadata} \
+            --output {output.metadata} \
+            --clades {input.clades_file}
+        """
+
+rule classify_domestic_wild:
+    message: "classifying strains as domestic or wild"
+    input:
+        metadata = rules.add_h5_clade.output.metadata,
+        avian_synonyms = files.avian_synonyms,
+        strain_fixes = files.strain_fixes,
+        exclude_file = files.exclude,
+        classified_abstracts = files.classified_abstracts,
+        strain_annotations = files.strain_annotations,
+        pubmed_ids = files.pubmed_ids
+    output:
+        metadata= "results/metadata-with-clade-classified_{subtype}_{segment}.tsv"
+    shell:
+        """
+        python scripts/classify-avian-sequences-into-domestic-or-wild.py \
+            --metadata {input.metadata} \
+            --output_file {output.metadata} \
+            --avian_synonyms {input.avian_synonyms}\
+            --strain_fixes {input.strain_fixes}\
+            --classified_abstracts {input.classified_abstracts}\
+            --strain_annotations {input.strain_annotations}\
+            --pubmed_ids {input.pubmed_ids}\
+            --exclude_file {input.exclude_file}
+        """

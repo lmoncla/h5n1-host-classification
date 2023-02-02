@@ -1,0 +1,148 @@
+pubmed_id	domestic_wild	notes
+23199027		unclear from paper
+12021367	domestic	used a duck isolate from domestic duck meat that had been imported from China to South Korea. They then did lab experiments where they infected chickens
+20016038	domestic	isolated these from either decoy ducks (H5N3s) or from free-range commercial ducks
+22710372	domestic	surveillance of poultry in Laos
+29104094	domestic	surveillance of poultry during outbreaks in Nigeria
+16845780	domestic	poultry that died during a small outbreak in a village in Siberia
+25938456	exclude	this was a study where they took a couple isolates that have different pathogenicities in mice, and passaged and studied them
+28036106	domestic	these are samples from domestic peahens and peacocks from a palace in Kirkuk city in Iraq
+19074791	domestic	isolated from outbreaks among poultry in Myanmar
+27162026	domestic	this paper describes peacocks and tigers that died from H5N1 in a zoo in China
+15859328	exclude	they use an F3 virus from a goose and clone it into a murine leukemia virus vector to study stuff
+16183140	domestic	this is actually a methods paper where they develop an RT-PCR method and then to show it works, test it on poultry and mammal samples
+16713612	domestic	poultry isolates from Indonesia and Vietnam
+21466927	wild	this is an isolate from a wild mallard duck infected with H5N1 that was apparently healthy
+23402103	domestic	poultry in Egypt; this abstract/paper might have some information about small vs. large farms
+18984006		you unfortunately cannot tell from the paper whether these duck samples were domestic or wild. I'd guess domestic because the person who provided them was from the vet school, but we can't be sure 
+23683998	domestic	chickens and ducks sampled during an outbreak in Vietnam; samples came from dead birds
+22377052	see strain list	this project looked at both domestic and wild birds. I am pretty positive that all of the species in the wild list are ones I have classified as wild, but they also provide a table which I will use to manually add those in
+15964604	domestic	this paper is an analysis of H5N1 infected duck meat from Japan imported from China. They isolate it and infect birds and mice as well to characterize pathogenicity
+18712589	domestic	characterizing H5N1 in poultry in Israel
+22371029	domestic	characterization of H5N1 in domestic ducks in China
+16447511	wild	there were recurrent outbreaks among domestic ostriches and to investigate why they surveilled wild aquatic birds for several years in South Africa 
+18394281	domestic	poultry surveillance in Vietnam
+27389972		they classified both domestic and wild birds, and don't specify. I think there is actually only 1 duck sequence here
+20836384	domestic	domestic duck from an H5N1 reassortant virus with internals from H9N2
+17276709	exclude	I don't think that this paper is even about influenza, they may have just used it as a vector or something
+18801394		this required reading the actual paper and making a bit of a guess, and in the end I'm not totally sure. In the paper, they sequence 19 new poultry and 11 wild. 9/11 wild are unambiguously storks/sparrows. 15/19 domestic are chickens. That leaves 2 ducks, 2 quails, and 2 pigeons 
+21173241	exclude	this was a study where they did ancestral state reconstruction on an H5 HA tree and used that to make a vaccine target. They generate a replication-competent virus as well 
+23458714		unclear, they characterize viruses from a variety of species
+16532371	domestic	these viruses were isolated form shell washes of duck or goose eggs confiscated from people traveling from Vietnam
+16473931	domestic	I had to read the actual paper for this, but the information is available in figure 1. In green and blue are the wild birds, which are all annotated as either migratory duck or migratory bird. For this figure, brown strains are the domestic poultry, and these are labelled simply as "duck". So, because I have annotated in my strain text file that "migratory duck" is a wild bird, I can annotate all remaining ambiguous duck sequences as domestic for this paper
+18032512	exclude	they use existing duck sequences to generate some reassortant viruses and assess NS1 pathogenicity in mice 
+17512143	domestic	they sequenced a virus from a smuggled duck 
+21310090	wild	they sequenced a fecal sample collected from a wild, migratory mallard duck in Japan 
+16318689	domestic	they characterize H5N1 viruses sampled from a 2004 outbreak in humans and poultry
+24655395	domestic	active surveillance among domestic poultry in Egypt
+11878904	domestic	looked at domestic ducks and geese imported for food into China
+18172752	wild	these were European wild birds sampled during an outbreak
+11739677	domestic	looking at pathogenic effects of viruses isolated from poultry in China
+18216109	domestic	collected samples from live poultry markets in southern China
+20335251	wild	looked at wild birds that died following an outbreak in Austria
+24880916	domestic	there was a outbreak in a domestic duck farm in Vietnam that occurred just a few days after they had vaccinated the ducks; a bunch died and the infecting viruses were very different
+18789611	domestic	they characterize sequences from a turkey farm outbreak in the Czech Republic
+26627108	domestic	surveillance in live poultry markets in China
+18387755		unclear, they sequenced 3 duck samples, 1 from each of 3 outbreaks. 2 were from domestic ducks, 1 was from a dead, wild duck 
+16439620		this is pretty frustrating, they have this big repository of sequences from St. Jude and sequenced a bunch of birds, including domestic and wild birds. they don't specify anywhere which strains are which 
+26748550	domestic	domestic duck farm samples from Vietnam that had recently been vaccinated
+20016036	domestic	domestic poultry in Laos
+18031958	wild	wild birds infected with H5N1 in Germany
+25604926	domestic	isolated from live poultry markets in China
+23921843	wild	they took an isolate from a bird in California, but this was mostly a study about the effects of passaging on sequencing
+22212904		I read the paper and it is still unclear whether the duck and quail are domestic or wild
+18675524	domestic	they have 3 isolates from poultry in Thailand and characterize pathogenicity in chickens, ducks, and quails
+15241415	domestic	isolated from poultry in live markets, either sick or not
+22843856	exclude	this is a parrot sequence, which I don't think is important for me to include or use 
+17662125	exclude	they took a duck virus and infected mice 
+19464724	domestic	poultry surveillance in Indonesia
+17075062	domestic	the vast majority of samples in this paper come from live poultry market surveillance. there were an additional 16 samples that come from smuggled poultry + wild birds. I found all the sequences associated with this paper, and the wild bird strains were obvious. So I am quite confident that the remaining duck and geese are domestic
+20432047		I'm pretty sure domestic, but I can't be sure. They sequence 4 strains from "wild and domestic birds"
+15671756		I read this paper and it does not say whether the duck sequence was domestic or wild
+18787938	wild	wild birds found dead during/after an outbreak in Switzerland
+16007072	wild	this is from a cool looking nature paper identifying that migratory, bar-headed geese can carry h5n1
+15717120	domestic	isolated from farms in China
+22363750	domestic	poultry in India
+24993865	domestic	farmed quails in China
+15235128	domestic	domestic ducks from China, apparently healthy
+19720095	domestic	poultry markets in China
+25962145	domestic	poultry farms and backyard poultry in Egypt
+27873070	domestic	outbreak investigation among domestic poultry in Nigeria
+19137421	domestic	domestic ducks
+23381391	domestic	these are specifically from backyard flocks in Egypt
+20298489	wild	wild birds sampled from Bavaria
+26900963	domestic	domestic quail from Vietnam
+17251574	wild	wild samples from Germany
+22669540	domestic	poultry from Egypt
+30075357	domestic	live poultry market in Cambodia
+27000533	domestic	poultry in Egypt
+18941631	domestic	surveillance in Vietnam
+27309046	domestic	live bird market and backyard poultry surveillance in Bangladesh
+26656683	domestic	from live bird markets in China
+17522271	exclude	this paper is all about erthrocyte binding
+22017055	exclude	they found a dead emu in a nature reserve in Israel. I guess this must be an escaped zoo animal or something, but I think we should just exclude it
+20538856	domestic	in this paper, they specify that they sample domestic and wild birds, but specify that they sampled chickens, ducks, geese, and wild birds, implying that the chickens, ducks and geese are domestic
+20071565	domestic	poultry in Nigeria
+17459857	wild	collected dead, wild birds in Bavaria
+17498292	domestic	this paper looked at domestic and wild birds. However, all of the wild birds are from species I have already classified as always wild. The domestic samples are 1 peacock, 1 fowl, and 2 muscovy ducks. These were all isolated from a hobby poultry farm
+17694626	domestic	a large outbreak of H5N1 in a large commercial meat turkey site in England
+21896207	domestic	specifically looked at H5N1 in smallholder duck farms in Indonesia
+18774155		I'm pretty sure that this is describing domestic bird sequences from poultry in China; however, it is not explicitly stated
+18976558	domestic	live bird markets and food markets in Thailand
+19520524	domestic	this paper describes both domestic and wild samples; however, the wild samples are all mute swans, and the goose sample is from a free-range goose farm in Hungary
+21749770	domestic	isolated from 2 apparently healthy domestic ducks in China
+16935377	domestic	isolated H5N1 from poultry samples during an outbreak in Thailand
+15681421	domestic	they characterized pathogenicity of isolates from a 2004 outbreak in Thailand among human and poultry
+19058578	domestic	they sequenced NS genes from diseased or dead poultry during an outbreak in Thailand between 2004 and 2005
+18202945	domestic	in this paper they report on domestic and wild birds; however, all of the wild birds have species names that I have classified as always wild; there is one sequence from a turkey that was isolated from a large outbreak on a turkey farm in France. So the turkey sequence is domestic
+20521713	domestic	received samples from poultry outbreak investigation in Egypt
+17553267	domestic	poultry from Russia
+29574145	domestic	collected during poultry surveillance in Indonesia
+21327896	domestic	ducks in Egypt that were "house-reared", which I assume means that they come from small, household farms
+10074191	domestic	sequences from poultry farms in Hong Kong
+27199961	domestic	the viruses were isolated from apparently healthy birds in live bird markets
+27174088	domestic	poultry from India
+19088292	domestic	poultry in Thailand; all but one were from backyard flocks; 1 was from a broiler chicken farm 
+24722680	domestic	surveillance of poultry in Egypt
+19428743		unclear; this is most likely domestic, as they are describing chicken and duck sequences from Vietnam, which I would assume are from surveillance. However, they don't explicitly say whether these samples came from domestic or wild birds
+21977732	wild	there are 2 duck sequences associated with this paper. they were both isolated from feces from wild, migrating ducks in Japan
+17728231	wild	apparently this is wild bird surveillance in the US, which is pretty cool 
+22806090	domestic	these viruses were all sampled during poultry outbreaks in Myanmar
+17553279	domestic	they collected viruses from wild hooded vultures, and also for comparison a domestic guinea fowl and a few backyard chickens; so the vultures are wild, the guinea fowl is domestic
+22113008	wild	this describes samples collected during wild bird surveillance in Japan, which also caused an outbreak on a bunch of chicken farms. The duck samples in this paper are wild duck and the only domestic samples are chicken 
+21904849	wild	wild swans in China
+12077307	domestic	surveillance in poultry from retail markets and from imported duck and geese at central wholesale slaughter facilities
+28770175	domestic	swabbed poultry in China
+17626485	wild	these were isolated from migrating birds in China
+19800184	domestic	all samples taken from poultry infected during 3 waves of outbreaks in South Korea
+21632563		the title says that this paper is looking at wild ducks, but they say they collected samples from chickens and ducks during outbreaks, so I don't know how to label this. I am just going to leave as unknown
+23776615	domestic	samples came from commercial farms and domestic settings in Indonesia
+23650608		they were mostly interested in pH stability so they don't say where their isolates came from
+18325269	domestic	they looked at domestic and wild samples from South Korea, but they only report 2 wild samples, and they are both labelled as environmental (feces). So the duck and quail are domestic
+15731263		not clear, and I think this only refers to 1 duck sequence
+23861018		I couldn't really tell from the paper which sequences were from domestic vs. wild birds
+23226433	domestic	poultry in Vietnam
+17616798	domestic	poultry in Israel
+22515536	domestic	poultry in Vietnam
+21586098	domestic	poultry in Vietnam that were visibly sick. this paper may have some information on farm size and vaccinated or not
+19279171	domestic	this paper just uses a bunch of avian samples on hand to test out a new method. Conveniently, in table 1, they list all the samples positive for H5N1 and whether they were domestic. All of the avian samples that were not from obviously wild birds are domestic (poultry, chicken, duck, goose). There is 1 goose that is wild, but it was H7N7 so it should not be in this dataset
+19937535	domestic	they isolated viruses from apparently healthy and dead domestic mallard ducks in China
+18631423	domestic	samples taken from outbreaks in Nigeria
+15148370	see strain list	this paper looks at both domestic and wild birds, and the strain names themselves do not always match the exact species (for example, "duck" can mean domestic duck or a wild duck). However, Table 1 breaks down where each virus was sampled, making it clear whether it is domestic or wild. I added these to the strain specific annotations file
+27922116	domestic	household poultry sampled in Egypt
+23804642	domestic	they performed active surveillance on duck farms that lie near migratory stopover sites in China, which is really cool 
+22498319		unclear, they got a sample from a goose, but they don't say where it came from
+19924254	domestic	sampled from poultry outbreaks in India
+18931064	see strain list	this is a weird paper, because in addition to standard poultry, they also characterize H5N1 in imported falconry birds (a falcon and a houbara bustard). I have no idea what to do with these birds, so I might just end up excluding them, but they are indeed, domestic
+21782862	wild	wild, migrating ducks in South Korea
+19290041	domestic	from the wording in the methods it appears as though H5N1 was only really detected in the domestic samples, and that poultry isolates were used
+23469251	exclude	this is a study about the pathogenicity of PB1-F2, and they use a duck sample that it is not clear where it came from 
+21674170	domestic	poultry farms in Egypt
+26038508	domestic	poultry markets in Bangladesh
+10484749	domestic	this is the original A/goose/Guangdong/1996 paper; I have confirmed that this is from a domestic goose!
+16704821	wild	a cat in Thailand ate a dead pigeon. they sampled from the cat and also sampled a dead pigeon in the area that the cat lived. the owner confirmed that the cat ate a dead pigeon
+27369428	domestic	these were domestic pigeons that were naturally infected in Egypt. there are apparently open air areas where domestic pigeons are raised
+19742325	wild	they did surveillance among wild birds in China
+28116911	domestic	domestic pigeons were submitted by their owners for testing in Egypt. Apparently pigeons are sometimes used for racing
+21251691	wild	wild pigeon from Thailand
+18216109	domestic	surveilled live poultry markets in China from 2001 to 2004

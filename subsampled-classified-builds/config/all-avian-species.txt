@@ -1,0 +1,397 @@
+# species annotated 	correction	domestic/wild status
+
+# vaguely poultry 
+poultry	poultry	domestic
+domesticbird	domestic_bird	domestic
+domesticpoultry	poultry	domestic
+domestic_bird	domestic_bird	domestic
+
+# chicken
+broiler	chicken	domestic
+broilerchicken	chicken	domestic
+ch	chicken	domestic
+ck	chicken	domestics
+chicken	chicken	domestic
+chiken	chicken	domestic
+fancychicken	chicken	domestic
+gallusgallus	chicken	domestic
+gallus_gallus	chicken	domestic
+hen	chicken	domestic
+layinghen	chicken	domestic
+layer	chicken	domestic
+layerchicken	chicken	domestic
+rooster	rooster	domestic
+silkiechicken	silkie_chicken	domestic
+silkychicken	silkie_chicken	domestic
+village_chicken	chicken	domestic
+villagechicken	chicken	domestic
+waterchicken	Common_moorhen	wild
+
+# duck
+# apparently only mallards and muscovy ducks have been domesticated. cool!
+americanblackduck	American_black_duck	wild
+anasacuta	Northern_pintail	wild
+anasplatyrhynchos	mallard	
+baikalteal	baikal_teal	wild
+black_duck	American_black_duck	wild
+blackduck	American_black_duck	wild
+blacknestedgrebe	black-necked_grebe	wilds
+cascadeduck	cascade_duck	domestic
+common_goldeneye	common_goldeneye	wild
+commongoldeneye	common_goldeneye	wild
+common_pochard	common_pochard	wild
+commonpochard	common_pochard	wild
+commonteal	Eurasian_teal	wild
+dack	duck	
+domestic_duck	duck	domestic
+domesticduck	duck	domestic
+domestic_green_winged_teal	green-winged_teal	domestic
+domesticgreen-wingedteal	green-winged_teal	domestic
+domesticmallardduck	mallard	domestic
+duck	duck	
+gadwall_duck	Gadwall	wild
+gadwallduck	Gadwall	wild
+goldeneyeduck	Goldeneye	wild
+goosander	goosander	wild
+greaterscaup	greater_scaup	wild
+europeanteal	Eurasian_teal	wild
+eurasianteal	Eurasian_teal	wild
+mallard	mallard	
+mallard_duck	mallard	
+mallardduck	mallard	
+mandarinduck	Mandarin_duck	wild
+mandarin_duck	Mandarin_duck	wild
+mergusalbellus	smew	wild
+migratoryduck	duck	wild
+musdk	Muscovy_duck	
+muscovy	Muscovy_duck	
+muscovyduck	Muscovy_duck	
+muscovy_duck	Muscovy_duck	
+northernpintail	Northern_pintail	wild
+pekingduck	Peking_duck	domestic
+pekinduck	American_Pekin_duck	domestic
+pintail	Northern_pintail	wild
+pochard	common_pochard	wild
+rbpochard	red-chested_pochard	wild
+rubbyshelduck	Ruddy_shelduck	wild
+ruddy_shelduck	Ruddy_shelduck	wild
+ruddyshelduck	Ruddy_shelduck	wild
+teal	teal	wild
+tufted_duck	Tufted_duck	wild
+tuftedduck	Tufted_duck	wild
+wild_duck	duck	wild
+wildduck	duck	wild
+wood_duck	Wood_duck	wild
+woodduck	Wood_duck	wild
+yellow_billed_duck	yellow-billed_duck	wild
+yellowbilledduck	yellow-billed_duck	wild
+
+# geese and swans
+# apparently, there are 2 main types of geese that have been domesticated. The Greylag goose (Anser anser) and the Swan goose (Anser cygnoides)
+# apparently the Emden goose is a German breed of domestic goose, and the American buff goose is a US domesticated goose, and sebastopol goose is a European domesticated goose
+americanbuffgoose	american_buff_goose	domestic
+ansercygnoides	swan_goose	
+anseralbifrons	greater_white-fronted_goose	wild
+anseranser	greylag_goose	
+anseranserdomesticus	domestic_goose	domestic
+goose	goose	
+geese	goose	
+bar_headed_goose	bar-headed_goose	wild
+bar-headedgoose	bar-headed_goose	wild
+barheadedgoose	bar-headed_goose	wild
+barnaclegoose	barnacle_goose	wild
+bean_goose	bean_goose	wild
+beangoose	bean_goose	wild
+black-headedgoose	black-headed_goose	wild
+brentgoose	brent_goose	wild
+brantaleucopsis	barnacle_goose	wild
+canada_goose	canada_goose	wild
+canadagoose	canada_goose	wild
+cygnus_cygnus	whooper_swan	wild
+cygnuscygnus	whooper_swan	wild
+cignusolor	mute_swan	wild
+cygnus_olor	mute_swan	wild
+cygnusolor	mute_swan	wild
+domesticgoose	goose	domestic
+embdengoose	embden_goose	domestic
+greaterwhitefrontedgoose	greater_white-fronted_goose	wild
+greygoose	grey_goose	
+greylaggoose	greylag_goose	
+graylaggoose	greylag_goose	
+mute_swan	mute_swan	wild
+muteswan	mute_swan	wild
+sebastopolgoose	sebastopol_goose	domestic
+snowgoose	snow_goose	wild
+tundraswan	tundra_swan	wild
+whitefrontedgoose	greater_white-fronted_goose	wild
+whistlingswan	tundra_swan	wild
+whooper_swan	whooper_swan	wild
+whooperswan	whooper_swan	wild
+whoopingswan	whooper_swan	wild
+wildgoose	goose	wild
+wildswan	swan	wild
+
+
+# other fowl 
+commonpheasant	common_pheasant	wild
+fowl	fowl	
+goldenpheasant	golden_pheasant	
+greenpeafowl	green_peafowl	
+guinea_fowl	guinea_fowl	
+guineafowl	guinea_fowl	
+juvenileswan	swan	wild
+kalijpheasant	kalij_pheasant	
+kaljipheasant	kalij_pheasant	
+peafowl	peafowl	
+pheasant	pheasant	
+phasianuscolchicus	common_pheasant	wild	
+quail	quail	
+qu	quail	
+swan	swan	
+silverpheasant	silver_pheasant	
+turkey	turkey	
+waterfowl	waterfowl	
+whitepeafowl	white_peafowl	
+wildfowl	fowl	wild
+
+# totally unclear 
+gh		
+dk	duck	
+gf	guinea_fowl	
+bird	bird	
+avian	bird	
+ck	chicken	
+gs	goose	
+ph	pheasant	
+eg	egg	domestic
+sck	Silkie_chicken	domestic
+qa	quail	
+environment	environment	environment
+
+# wild birds
+americanbluewingedteal	american_blue-winged_teal	wild
+american_green_winged_teal	American_green_winged_teal	wild
+americangreen-wingedteal	American_green_winged_teal	wild
+american_wigeon	American_wigeon	wild
+americanwigeon	American_wigeon	wild
+arctictern	arctic_tern	wild
+ardeacinerea	Grey_heron	wild
+ardeacinera	Grey_heron	wild
+babbler	Old_World_babbler	wild
+baldeagle	bald_eagle	wild
+barn_swallow	barn_swallow	wild
+barnswallow	barn_swallow	wild
+black-crownednightheron	Black-crowned_night_heron	wild
+black_crowned_night_heron	Black-crowned_night_heron	wild
+black-headedgull	black-headed_gull	wild
+blackheadedgull	black-headed_gull	wild
+black-neckedgrebe	black-necked_grebe	wild
+blackneckedgrebe	black-necked_grebe	wild
+black_swan	black_swan	wild
+blackswan	black_swan	wild
+blackbird	common_blackbird	wild
+blackbulbul	black_bulbul	wild
+blackvulture	black_vulture	wild
+bluemagpie	blue_magpie	wild
+bluewingedteal	blue-winged_teal	wild
+brownheadedgull	brown-headed_gull	wild
+brown-headedgull	brown-headed_gull	wild
+brown-headgull	brown-headed_gull	wild
+brown_headed_gull	brown-headed_gull	wild
+brown_headedgull	brown-headed_gull	wild
+buteobuteo	common_buzzard	wild
+buzzard	buzzard	wild
+cattleegret	cattle_egret	wild
+caspiangull	caspian_gull	wild
+ccrow	crow	wild
+crow	crow	wild
+chestnutmunia	chestnut_munia	wild
+chinesepondheron	Chinese_pond_heron	wild
+chukar	chukar	wild
+ciconiaciconia	white_stork	wild
+commonbussard	common_buzzard	wild
+commonbuzzard	common_buzzard	wild
+commoncoot	common_coot	wild
+commoncrane	common_crane	wild
+commongull	common_gull	wild
+commonkestrel	common_kestrel	wild
+commonketrel	common_kestrel	wild
+commonkestral	common_kestrel	wild
+commonmagpie	common_green_magpie	wild
+commonmyna	common_myna	wild
+commontern	common_tern	wild
+condor	condor	wild
+coopershawk	Coopers_hawk	wild
+coot	coot	wild
+cormorant	cormorant	wild
+crested_eagle	crested_eagle	wild
+crestedeagle	crested_eagle	wild
+crestedgoshawk	crested_goshawk	wild
+crestedmyna	crested_myna	wild
+curlew	curlew	wild
+dalmatianpelican	dalmatian_pelican	wild
+daurianstarling	daurian_starling	wild
+dove	dove	
+eagle	eagle	wild
+eagleowl	Eurasian_eagle-owl	wild
+egret	egret	wild
+emu	emu	
+Eurasian_coot	Eurasian_coot	wild
+eurasiancurlew	Eurasian_curlew	wild
+eurasian_eagle_owl	Eurasian_eagle-owl	wild
+eurasianeagleowl	Eurasian_eagle-owl	wild
+eurasianeagelowl	Eurasian_eagle-owl	wild
+eurasiansparrowhawk	Eurasian_sparrowhawk	wild
+eurasianspoonbill	Eurasian_spoonbill	wild
+europeanherringgull	European_herring_gull	wild
+eurasianwigeon	Eurasian_wigeon	wild
+falcon	falcon	wild
+falcoperegrinus	peregrine_falcon	wild
+feralpigeon	pigeon	wild
+goldenmountainthrush	golden_mountain_thrush	wild
+goldeneagle	golden_eagle	wild
+commonraven	common_raven	wild
+gadwall	gadwall	wild
+goshawk	Northern_goshawk	wild
+gray-crowedcrane	grey_crowned_crane	wild
+grayheron	grey_heron	wild
+greatblackbackedgull	great_black-backed_gull	wild
+greatblackheadedgull	great_black-backed_gull	wild
+great_black_headed_gull	black-headed_gull	wild
+greatblack-headedgull	black-headed_gull	wild
+great_cormorant	great_cormorant	wild
+greatcormorant	great_cormorant	wild
+great_created_grebe	great_crested_grebe	wild
+great_crested_grebe	great_crested_grebe	wild
+greatcrested-grebe	great_crested_grebe	wild
+greatcrestedgrebe	great_crested_grebe	wild
+greatdrestedgrebe	great_crested_grebe	wild
+great_egret	great_egret	wild
+greategret	great_egret	wild
+greatbarbet	great_barbet	wild
+greathornedowl	great_horned_owl	wild
+greattit	great_tit	wild
+greatwhitepelican	great_white_pelican	wild
+grebe	grebe	wild
+greenheron	green_heron	wild
+grey_heron	grey_heron	wild
+greyheron	grey_heron	wild
+gull	gull	wild
+hawk	hawk	wild
+heron	heron	wild
+herringgull	herring_gull	wild
+hill_myna	common_hill_myna	wild
+hillmyna	common_hill_myna	wild
+hoabara	houbara_bustard	wild
+hooded_crane	hooded_crane	wild
+hoodedcrane	hooded_crane	wild
+hoodedvulture	hooded_vulture	wild
+houbarabustard	houbara_bustard	wild
+housecrow	house_crow	wild
+housesparrow	house_sparrow	wild
+japanese_white_eye	Japanese_white-eye	wild
+japanesewhite-eye	Japanese_white-eye	wild
+kestrel	kestrel	wild
+larusridibundus	black-headed_gull	wild
+larusargentatus	European_herring_gull	wild
+large-billedcrow	large-billed_crow	wild
+largebilledcrow	large-billed_crow	wild
+laruscanus	common_gull	wild
+lesserblackbackedgull	lesser_black-backed_gull	wild
+lesserkestrel	lesser_kestrel	wild
+littlecuckoo-dove	little_cuckoo-dove	wild
+little_egret	little_egret	wild
+little_grebe	little_grebe	wild
+littleegret	little_egret	wild
+littlegrebe	little_grebe	wild
+littleowl	little_owl	wild
+long-tailedshrike	long-tailed_shrike	wild
+magpie	magpie	wild
+magpie_robin	Oriental_magpie-robin	wild
+magpierobin	magpie-robin	wild
+marabou_stork	marabou_stork	
+maraboustork	marabou_stork	
+migratorybird	migratory_bird	wild
+moorhen	moorhen	wild
+mountain_hawk_eagle	mountain_hawk-eagle	wild
+mountainhawk-eagle	mountain_hawk-eagle	wild
+munia	munia	wild
+mynah	myna	wild
+mynas	myna	wild
+ngan	ngan	wild
+northerngoshawk	northern_goshawk	wild
+northerngannet	northern_gannet	wild
+northern_shoveler	northern_shoveler	wild
+northernshoveler	northern_shoveler	wild
+open-billedstork	open-billed_stork	wild
+open-billstork	open-billed_stork	wild
+open_bill_stork	open-billed_stork	wild
+open_billed_stork	open-billed_stork	wild
+openbill	open-billed_stork	wild
+openbill_stork	open-billed_stork	wild
+openbillstork	open-billed_stork	wild
+open-billibis	open-billed_ibis	wild
+orientalmagpierobin	Oriental_magpie-robin	wild
+ostrich	ostrich	
+oystercatcher	oystercatcher	wild
+owl	owl	wild
+parrot	parrot	
+partridge	partridge	
+peacefuldove	peaceful_dove	wild
+peacock	peacock	
+pelican	pelican	wild
+pelecanuscrispus	Dalmatian_pelican	wild
+pelecanusconspicillatus	Australian_pelican	wild
+peregrine	peregrine_falcon	wild
+peregrine_falcon	peregrine_falcon	wild
+peregrinefalcon	peregrine_falcon	wild
+Peruvian_pelican	Peruvian_pelican	wild
+phalacrocorax	phalacrocorax	wild
+phalacrocoraxcarbo	great_cormorant	wild
+pied_megpie	Australian_magpie	wild
+piedmegpie	Australian_magpie	wild
+pigeon	pigeon	
+red-billedstarling	read-breasted_starling	wild
+redtailedhawk	red-tailed_hawk	wild
+rhea	rhea	wild
+robin	robin	wild
+rollers	roller	
+rook	rook	wild
+ruddy_turnstone	ruddy_turnstone	wild
+ruddyturnstone	ruddy_turnstone	wild
+saker_falcon	saker_falcon	wild
+sakerfalcon	saker_falcon	wild
+sanderling	sanderling	wild
+sandwichtern	sandwich_tern	wild
+scaly-breastedmunia	scaly-breasted_munia	wild
+seagull	gull	wild
+shorebird	shorebird	wild
+shrike	shrike	wild
+silver-earedmesia	silver-eared_mesia	wild
+silverearedmesia	silver-eared_mesia	wild
+slaty-backedgull	slaty-backed_gull	wild
+smew	smew	wild
+snowyowl	snowy_owl	wild
+songthrush	song_thrush	wild
+sparrow	sparrow	wild
+spur-wingedlapwing	spur-winged_lapwing	wild
+starling	starling	wild
+stonecurlew	stone_curlew	wild
+stork	stork	wild
+swallow	swallow	wild
+swiftlet	swiftlet	wild
+tachybaptusruficollis	little_grebe	wild
+thalasseussandvicensis	sandwich_tern	wild
+tree_sparrow	tree_sparrow	wild
+treesparrow	tree_sparrow	wild
+turtle_dove	turtle_dove	wild
+turtledove	turtle_dove	wild
+vulture	vulture	wild
+watercock	watercock	wild
+whitebackedmunia	white-backed_munia	wild
+white-backedmunia	white-backed_munia	wild
+whitestork	white_stork	wild
+whitetailedeagle	white-tailed_eagle	wild
+withetiledeagle	white-tailed_eagle	wild
+wild_bird	bird	wild
+wildbird	bird	wild
