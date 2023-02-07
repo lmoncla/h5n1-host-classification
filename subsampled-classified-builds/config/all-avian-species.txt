@@ -156,16 +156,16 @@ wildfowl	fowl	wild
 
 # totally unclear 
 gh		
-dk	duck	
-gf	guinea_fowl	
+dk	
+gf	
 bird	bird	
 avian	bird	
-ck	chicken	
-gs	goose	
-ph	pheasant	
-eg	egg	domestic
-sck	Silkie_chicken	domestic
-qa	quail	
+ck	
+gs	
+ph		
+eg	
+sck	
+qa	
 environment	environment	environment
 
 # wild birds
