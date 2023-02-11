@@ -1,0 +1,408 @@
+SUBTYPES = ["h5n1"]
+SEGMENTS = ["ha"]
+
+path_to_fauna = '../../../fauna'
+subsampling_regime = "5-region-year-host"
+template_alignment_name = "aligned_h5n1_ha"
+
+rule all:
+    input:
+        auspice_json = expand("auspice/flu_avian_{subtype}_{segment}.json", subtype=SUBTYPES, segment=SEGMENTS),
+        beast_xml = expand("results/for-beast/"+subsampling_regime+"-{subtype}-{segment}-mascot-skyline.xml", subtype=SUBTYPES, segment=SEGMENTS)
+
+rule files:
+    params:
+        dropped_strains = "../config/dropped_strains_{subtype}.txt",
+        reference = "../config/reference_{subtype}_{segment}.gb",
+        colors = "../config/colors_{subtype}.tsv",
+        lat_longs = "../config/lat_longs_{subtype}.tsv",
+        priorities_file = "../config/priorities.txt",
+        auspice_config = "../config/auspice_config_{subtype}.json",
+        clades_file = "../clade-labeling/h5n1-clades.tsv",
+        avian_synonyms = "../config/all-avian-species.txt",
+        strain_fixes = "../config/strain-host-fixes.tsv",
+        exclude = "../config/exclude.txt",
+        classified_abstracts = "../config/abstracts-classified.txt",
+        strain_annotations = "../config/strain-specific-annotations.txt",
+        pubmed_ids = "../config/pubmed-ids.tsv",
+        template_xml = "../config/2023-02-11-mascot-skyline-est-tipdates-TEMPLATE.xml"
+
+
+files = rules.files.params
+
+def group_by(w):
+    gb = {'h5n1': 'region year domestic_wild'}
+    return gb[w.subtype]
+
+def sequences_per_group(w):
+    spg = {'h5n1': '5'}
+    return spg[w.subtype]
+
+def min_length(w):
+    len_dict = {"pb2": 2100, "pb1": 2100, "pa": 2000, "ha":1600, "np":1400, "na":1270, "mp":900, "ns":800}
+    length = len_dict[w.segment]
+    return(length)
+
+def min_date(w):
+    date = {'h5n1': '1996'}
+    return date[w.subtype]
+
+def traits_columns(w):
+    traits = {'h5n1': 'region domestic_wild'}
+    return traits[w.subtype]
+
+rule download:
+    message: "Downloading sequences from fauna"
+    output:
+        sequences = "../data/{subtype}_{segment}.fasta"
+    params:
+        fasta_fields = "strain virus isolate_id collection_date host domestic_status region country division location subtype originating_lab submitting_lab authors INSDC_accession PMID h5_clade",
+        download_by = 'subtype:h5n1'
+    shell:
+        """
+        python3 {path_to_fauna}/vdb/download.py \
+            --database vdb \
+            --virus avian_flu \
+            --fasta_fields {params.fasta_fields} \
+            --select  {params.download_by} locus:{wildcards.segment} \
+            --path ../data \
+            --fstem {wildcards.subtype}_{wildcards.segment}
+        """
+
+rule parse:
+    message: "Parsing fasta into sequences and metadata"
+    input:
+        sequences = rules.download.output.sequences
+    output:
+        sequences = "../classification-results/sequences_{subtype}_{segment}.fasta",
+        metadata = "../classification-results/metadata_{subtype}_{segment}.tsv"
+    params:
+        fasta_fields =  "strain virus isolate_id date host domestic_status region country division location subtype originating_lab submitting_lab authors INSDC_accession PMID h5_clade",
+        prettify_fields = "region country division location host originating_lab submitting_lab"
+    shell:
+        """
+        augur parse \
+            --sequences {input.sequences} \
+            --output-sequences {output.sequences} \
+            --output-metadata {output.metadata} \
+            --fields {params.fasta_fields} \
+            --prettify-fields {params.prettify_fields}
+        """
+
+rule update_clades:
+    message: "Finding new h5 strains and annotating their clades with LABEL"
+    input:
+        sequences = "../data/{subtype}_{segment}.fasta",
+        metadata = "../classification-results/metadata_{subtype}_{segment}.tsv",
+        clades_file = files.clades_file
+    shell:
+        """
+        python ../clade-labeling/update-clades.py \
+            --metadata {input.metadata} \
+            --sequences {input.sequences} \
+            --clades_file {input.clades_file} \
+            --subtype h5n1 \
+        """
+
+rule add_h5_clade:
+    message: "Adding in a column for h5 clade numbering"
+    input:
+        metadata = rules.parse.output.metadata,
+        clades_file = files.clades_file
+    output:
+        metadata= "../classification-results/metadata-with-clade_{subtype}_{segment}.tsv"
+    shell:
+        """
+        python ../clade-labeling/add-clades.py \
+            --metadata {input.metadata} \
+            --output {output.metadata} \
+            --clades {input.clades_file}
+        """
+
+rule classify_domestic_wild:
+    message: "classifying strains as domestic or wild"
+    input:
+        metadata = rules.add_h5_clade.output.metadata,
+        avian_synonyms = files.avian_synonyms,
+        strain_fixes = files.strain_fixes,
+        exclude_file = files.exclude,
+        classified_abstracts = files.classified_abstracts,
+        strain_annotations = files.strain_annotations,
+        pubmed_ids = files.pubmed_ids
+    output:
+        metadata= "../classification-results/metadata-with-clade-classified_{subtype}_{segment}.tsv"
+    shell:
+        """
+        python ../scripts/classify-avian-sequences-into-domestic-or-wild.py \
+            --metadata {input.metadata} \
+            --output_file {output.metadata} \
+            --avian_synonyms {input.avian_synonyms}\
+            --strain_fixes {input.strain_fixes}\
+            --classified_abstracts {input.classified_abstracts}\
+            --strain_annotations {input.strain_annotations}\
+            --pubmed_ids {input.pubmed_ids}\
+            --exclude_file {input.exclude_file}
+        """
+
+rule remove_duplicate_sequences:
+    message: "removing sequences that are identical using seqkit rmdup"
+    input:
+        sequences = "../classification-results/sequences_{subtype}_{segment}.fasta"
+    output:
+        sequences = "../classification-results/sequences_{subtype}_{segment}_deduped.fasta"
+    shell:
+        """
+        cat {input.sequences} | seqkit rmdup -s -o {output.sequences}
+        """
+
+rule filter:
+    message:
+        """
+        Filtering to
+          - {params.sequences_per_group} sequence(s) per {params.group_by!s}
+          - excluding strains in {input.exclude}
+          - excluding strains prior to {params.min_date}
+        """
+    input:
+        sequences = rules.remove_duplicate_sequences.output.sequences,
+        metadata = rules.classify_domestic_wild.output.metadata,
+        exclude = files.exclude,
+        priorities_file = files.priorities_file
+    output:
+        sequences = "results/filtered_sequences_{subtype}_{segment}.fasta",
+        metadata = "results/filtered_metadata_{subtype}_{segment}.txt"
+    params:
+        group_by = group_by,
+        sequences_per_group = sequences_per_group,
+        min_date = min_date,
+        min_length = min_length,
+        exclude_where = "host=nonhuman\ mammal host=environment host=unknown host=other host=laboratoryderived country=? region=? domestic_wild=environment domestic_wild=nonhuman\ mammal domestic_wild=laboratoryderived domestic_wild=other domestic_wild=exclude domestic_wild=''"
+
+    shell:
+        """
+        augur filter \
+            --sequences {input.sequences} \
+            --metadata {input.metadata} \
+            --exclude {input.exclude} \
+            --output-sequences {output.sequences} \
+            --output-metadata {output.metadata} \
+            --group-by {params.group_by} \
+            --sequences-per-group {params.sequences_per_group} \
+            --min-date {params.min_date} \
+            --exclude-where {params.exclude_where} \
+            --min-length {params.min_length} \
+            --priority {input.priorities_file}\
+            --no-probabilistic-sampling \
+            --non-nucleotide
+        """
+
+rule align:
+    message:
+        """
+        Aligning sequences to {input.reference}
+          - filling gaps with N
+        """
+    input:
+        sequences = rules.filter.output.sequences,
+        reference = files.reference
+    output:
+        alignment = "results/aligned_{subtype}_{segment}.fasta"
+    shell:
+        """
+        augur align \
+            --sequences {input.sequences} \
+            --reference-sequence {input.reference} \
+            --output {output.alignment} \
+            --remove-reference \
+            --nthreads 1
+        """
+
+rule tree:
+    message: "Building tree"
+    input:
+        alignment = rules.align.output.alignment
+    output:
+        tree = "results/tree-raw_{subtype}_{segment}.nwk"
+    params:
+        method = "iqtree"
+    shell:
+        """
+        augur tree \
+            --alignment {input.alignment} \
+            --output {output.tree} \
+            --method {params.method} \
+            --nthreads 1
+        """
+
+rule refine:
+    message:
+        """
+        Refining tree
+          - estimate timetree
+          - use {params.coalescent} coalescent timescale
+          - estimate {params.date_inference} node dates
+        """
+    input:
+        tree = rules.tree.output.tree,
+        alignment = rules.align.output,
+        metadata = rules.classify_domestic_wild.output.metadata
+    output:
+        tree = "results/tree_{subtype}_{segment}.nwk",
+        node_data = "results/branch-lengths_{subtype}_{segment}.json"
+    params:
+        coalescent = "const",
+        date_inference = "marginal",
+        clock_filter_iqd = 4
+    shell:
+        """
+        augur refine \
+            --tree {input.tree} \
+            --alignment {input.alignment} \
+            --metadata {input.metadata} \
+            --output-tree {output.tree} \
+            --output-node-data {output.node_data} \
+            --timetree \
+            --coalescent {params.coalescent} \
+            --date-confidence \
+            --date-inference {params.date_inference} \
+            --clock-filter-iqd {params.clock_filter_iqd}
+        """
+
+rule ancestral:
+    message: "Reconstructing ancestral sequences and mutations"
+    input:
+        tree = rules.refine.output.tree,
+        alignment = rules.align.output
+    output:
+        node_data = "results/nt-muts_{subtype}_{segment}.json"
+    params:
+        inference = "joint"
+    shell:
+        """
+        augur ancestral \
+            --tree {input.tree} \
+            --alignment {input.alignment} \
+            --output-node-data {output.node_data} \
+            --inference {params.inference}\
+            --keep-ambiguous
+        """
+
+rule translate:
+    message: "Translating amino acid sequences"
+    input:
+        tree = rules.refine.output.tree,
+        node_data = rules.ancestral.output.node_data,
+        reference = files.reference
+    output:
+        node_data = "results/aa-muts_{subtype}_{segment}.json"
+    shell:
+        """
+        augur translate \
+            --tree {input.tree} \
+            --ancestral-sequences {input.node_data} \
+            --reference-sequence {input.reference} \
+            --output {output.node_data}
+        """
+
+rule traits:
+    message: "Inferring ancestral traits for {params.columns!s}"
+    input:
+        tree = rules.refine.output.tree,
+        metadata = rules.classify_domestic_wild.output.metadata
+    output:
+        node_data = "results/traits_{subtype}_{segment}.json",
+    params:
+        columns = traits_columns,
+    shell:
+        """
+        augur traits \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --output {output.node_data} \
+            --columns {params.columns} \
+            --confidence
+        """
+
+rule cleavage_site:
+    message: "determining sequences that harbor furin cleavage sites"
+    input:
+        alignment = "results/aligned_{subtype}_ha.fasta"
+    output:
+        cleavage_site_annotations = "results/cleavage-site_{subtype}_ha.json",
+        cleavage_site_sequences = "results/cleavage-site-sequences_{subtype}_ha.json"
+    shell:
+        """
+        python ../scripts/annotate-ha-cleavage-site.py \
+            --alignment {input.alignment} \
+            --furin_site_motif {output.cleavage_site_annotations} \
+            --cleavage_site_sequence {output.cleavage_site_sequences}
+        """
+
+rule generate_beast_alignment:
+    message: "generate an alignment for beast"
+    input:
+        metadata = rules.classify_domestic_wild.output.metadata,
+        input_alignment = rules.align.output.alignment,
+        furin_annotations_file = rules.cleavage_site.output.cleavage_site_annotations,
+        furin_seqs = rules.cleavage_site.output.cleavage_site_sequences
+    output:
+        output_alignment= "results/for-beast/aligned_{subtype}_{segment}.for-beast.fasta"
+    shell:
+        """
+        python ../scripts/generate-alignment-for-beast.py \
+            --metadata_file {input.metadata} \
+            --output_file {output.output_alignment} \
+            --input_alignment {input.input_alignment}\
+            --furin_annotations_file {input.furin_annotations_file}\
+            --furin_seqs {input.furin_seqs}
+        """
+
+rule generate_beast_xml:
+    message: "generate an xml for beast"
+    input:
+        input_alignment = rules.generate_beast_alignment.output.output_alignment,
+        template_xml = files.template_xml
+    output:
+        xml= "results/for-beast/"+subsampling_regime+"-{subtype}-{segment}-mascot-skyline.xml"
+    shell:
+        """
+        python ../scripts/input-alignment-into-beast-xml.py \
+            --output_file {output.xml} \
+            --input_alignment {input.input_alignment}\
+            --alignment_name subsampling_regime\
+            --template_xml {input.template_xml}\
+            --template_alignment_name template_alignment_name
+        """
+
+
+rule export:
+    message: "Exporting data files for for auspice"
+    input:
+        tree = rules.refine.output.tree,
+        metadata = rules.classify_domestic_wild.output.metadata,
+        node_data = [rules.refine.output.node_data, rules.traits.output.node_data,rules.ancestral.output.node_data, rules.translate.output.node_data, rules.cleavage_site.output.cleavage_site_annotations, rules.cleavage_site.output.cleavage_site_sequences],
+        colors = files.colors,
+        lat_longs = files.lat_longs,
+        auspice_config = files.auspice_config
+    output:
+        auspice_json = "auspice/flu_avian_{subtype}_{segment}.json"
+    shell:
+        """
+        augur export v2 \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --node-data {input.node_data}\
+            --colors {input.colors} \
+            --lat-longs {input.lat_longs} \
+            --auspice-config {input.auspice_config} \
+            --include-root-sequence \
+            --output {output.auspice_json}
+        """
+
+rule clean:
+    message: "Removing directories: {params}"
+    params:
+        "results ",
+        "auspice"
+    shell:
+        "rm -rfv {params}"
