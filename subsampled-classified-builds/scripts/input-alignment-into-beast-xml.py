@@ -210,8 +210,8 @@ tipdate_blocks, tipdate_loggers, tipdate_operators = generate_estimated_tip_date
 
 
 
-trait_block_identifier = "            <typeTrait id=\"typeTraitSet.t:"
-date_block_identifier = "            <trait id=\"dateTrait.t:"
+trait_block_identifier = "                        <typeTrait id=\"typeTraitSet.t:"
+date_block_identifier = "                <trait id=\"dateTrait.t:"
 lines_to_skip = ("name=\"alignment","spec=\"Alignment","        <sequence id")
 
 with open(output_file, "w") as outfile: 
