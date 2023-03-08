@@ -7,8 +7,10 @@ domesticpoultry	poultry	domestic
 domestic_bird	domestic_bird	domestic
 
 # chicken
+breederchicken	breeder_chicken	domestic
 broiler	chicken	domestic
 broilerchicken	chicken	domestic
+brahmachicken	brahma_chicken	domestic
 ch	chicken	domestic
 ck	chicken	domestics
 chicken	chicken	domestic
@@ -35,7 +37,9 @@ anasplatyrhynchos	mallard
 baikalteal	baikal_teal	wild
 black_duck	American_black_duck	wild
 blackduck	American_black_duck	wild
-blacknestedgrebe	black-necked_grebe	wilds
+blacknestedgrebe	black-necked_grebe	wild
+breederduck	breeder_duck	domestic
+broilerduck	broiler_duck	domestic
 cascadeduck	cascade_duck	domestic
 common_goldeneye	common_goldeneye	wild
 commongoldeneye	common_goldeneye	wild
@@ -48,6 +52,7 @@ domesticduck	duck	domestic
 domestic_green_winged_teal	green-winged_teal	domestic
 domesticgreen-wingedteal	green-winged_teal	domestic
 domesticmallardduck	mallard	domestic
+domesticmallard	mallard	domestic
 duck	duck	
 gadwall_duck	Gadwall	wild
 gadwallduck	Gadwall	wild
@@ -56,6 +61,7 @@ goosander	goosander	wild
 greaterscaup	greater_scaup	wild
 europeanteal	Eurasian_teal	wild
 eurasianteal	Eurasian_teal	wild
+falcatedduck	falcated_duck	wild
 mallard	mallard	
 mallard_duck	mallard	
 mallardduck	mallard	
@@ -73,6 +79,7 @@ pekinduck	American_Pekin_duck	domestic
 pintail	Northern_pintail	wild
 pochard	common_pochard	wild
 rbpochard	red-chested_pochard	wild
+ringneckedduck	ring-necked_duck	wild
 rubbyshelduck	Ruddy_shelduck	wild
 ruddy_shelduck	Ruddy_shelduck	wild
 ruddyshelduck	Ruddy_shelduck	wild
@@ -105,6 +112,7 @@ beangoose	bean_goose	wild
 black-headedgoose	black-headed_goose	wild
 brentgoose	brent_goose	wild
 brantaleucopsis	barnacle_goose	wild
+cacklinggoose	cackling_goose	wild
 canada_goose	canada_goose	wild
 canadagoose	canada_goose	wild
 cygnus_cygnus	whooper_swan	wild
@@ -123,6 +131,7 @@ muteswan	mute_swan	wild
 sebastopolgoose	sebastopol_goose	domestic
 snowgoose	snow_goose	wild
 tundraswan	tundra_swan	wild
+whitefrontgoose	greater_white-fronted_goose	wild
 whitefrontedgoose	greater_white-fronted_goose	wild
 whistlingswan	tundra_swan	wild
 whooper_swan	whooper_swan	wild
@@ -206,6 +215,7 @@ caspiangull	caspian_gull	wild
 ccrow	crow	wild
 crow	crow	wild
 chestnutmunia	chestnut_munia	wild
+chiloewigeon	chiloe_wigeon	wild
 chinesepondheron	Chinese_pond_heron	wild
 chukar	chukar	wild
 ciconiaciconia	white_stork	wild
@@ -219,11 +229,13 @@ commonketrel	common_kestrel	wild
 commonkestral	common_kestrel	wild
 commonmagpie	common_green_magpie	wild
 commonmyna	common_myna	wild
+commonpochard	common_pochard	wild
 commontern	common_tern	wild
 condor	condor	wild
 coopershawk	Coopers_hawk	wild
 coot	coot	wild
 cormorant	cormorant	wild
+crane	crane	wild
 crested_eagle	crested_eagle	wild
 crestedeagle	crested_eagle	wild
 crestedgoshawk	crested_goshawk	wild
@@ -250,8 +262,10 @@ falcoperegrinus	peregrine_falcon	wild
 feralpigeon	pigeon	wild
 goldenmountainthrush	golden_mountain_thrush	wild
 goldeneagle	golden_eagle	wild
+greenwingedteal	green-winged_teal	wild
 commonraven	common_raven	wild
 gadwall	gadwall	wild
+garganey	garganey	wild
 goshawk	Northern_goshawk	wild
 gray-crowedcrane	grey_crowned_crane	wild
 grayheron	grey_heron	wild
@@ -291,7 +305,9 @@ housecrow	house_crow	wild
 housesparrow	house_sparrow	wild
 japanese_white_eye	Japanese_white-eye	wild
 japanesewhite-eye	Japanese_white-eye	wild
+junglecrow	jungle_crow	wild
 kestrel	kestrel	wild
+knotwader	red_knot	wild
 larusridibundus	black-headed_gull	wild
 larusargentatus	European_herring_gull	wild
 large-billedcrow	large-billed_crow	wild
@@ -346,6 +362,7 @@ peregrine	peregrine_falcon	wild
 peregrine_falcon	peregrine_falcon	wild
 peregrinefalcon	peregrine_falcon	wild
 Peruvian_pelican	Peruvian_pelican	wild
+peruvian_pelican	Peruvian_pelican	wild
 phalacrocorax	phalacrocorax	wild
 phalacrocoraxcarbo	great_cormorant	wild
 pied_megpie	Australian_magpie	wild
@@ -362,19 +379,24 @@ ruddyturnstone	ruddy_turnstone	wild
 saker_falcon	saker_falcon	wild
 sakerfalcon	saker_falcon	wild
 sanderling	sanderling	wild
+sandpiper	sandpiper	wild
 sandwichtern	sandwich_tern	wild
 scaly-breastedmunia	scaly-breasted_munia	wild
+seaeagle	sea_eagle	wild
 seagull	gull	wild
 shorebird	shorebird	wild
 shrike	shrike	wild
 silver-earedmesia	silver-eared_mesia	wild
 silverearedmesia	silver-eared_mesia	wild
+slatybackedgull	slaty-backed_gull	wild
 slaty-backedgull	slaty-backed_gull	wild
 smew	smew	wild
 snowyowl	snowy_owl	wild
 songthrush	song_thrush	wild
 sparrow	sparrow	wild
+spotbilledduck	spot-billed_duck	wild
 spur-wingedlapwing	spur-winged_lapwing	wild
+spurwingedgoose	spur-winged_goose	wild
 starling	starling	wild
 stonecurlew	stone_curlew	wild
 stork	stork	wild
@@ -390,6 +412,7 @@ vulture	vulture	wild
 watercock	watercock	wild
 whitebackedmunia	white-backed_munia	wild
 white-backedmunia	white-backed_munia	wild
+whiteeyedpochard	white-eyed_pochard	wild
 whitestork	white_stork	wild
 whitetailedeagle	white-tailed_eagle	wild
 withetiledeagle	white-tailed_eagle	wild

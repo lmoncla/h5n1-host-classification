@@ -15,3 +15,5 @@ A/chicken/Guizhou/05/2013	EPI532498
 
 # clearly a swine sequence that was somehow mislabeled
 A/Swine/Timika/BBVM186B/2007	EPI2035597
+
+AmallardDenmark129461120201026	

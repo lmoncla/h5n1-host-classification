@@ -146,7 +146,7 @@ def generate_mrca_distribution_block(strain, alignment_name, upper_prior_bound_y
 def generate_operator(strain, alignment_name):
     strain_name = strain.split("|")[0]
     
-    operator_line = "        <operator id=\"tipDatesSampler"+strain_name+"\" spec=\"TipDatesRandomWalker\" taxonset=\"@"+strain_name+"\" tree=\"@Tree.t:"+alignment_name+"\" weight=\"1.0\" windowSize=\"1.0\"/>"    
+    operator_line = "        <operator id=\"tipDatesSampler"+strain_name+"\" spec=\"TipDatesRandomWalker\" taxonset=\"@"+strain_name+"\" tree=\"@Tree.t:"+alignment_name+"\" weight=\"0.01\" windowSize=\"1.0\"/>"    
     return(operator_line)
 
 
@@ -197,7 +197,7 @@ alignment_dict = read_in_alignment(input_alignment)
 
 
 # index of the trait in the string
-trait_location = 12
+trait_location = 13
 decimal_date_location = 1
 long_date_location = 2
 strain_location = 0

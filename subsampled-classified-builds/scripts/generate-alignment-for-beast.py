@@ -32,6 +32,8 @@ def read_metadata_file(metadata_file):
                 host_group =  line.split("\t")[fields.index("host")].lower()
                 host_species = line.split("\t")[fields.index("host_species_standardized")]
                 domestic_wild = line.split("\t")[fields.index("domestic_wild")]
+                
+                subtype = line.split("\t")[fields.index("subtype")]
 
                 accession = line.split("\t")[fields.index("isolate_id")]
                 insdc_accession = line.split("\t")[fields.index("INSDC_accession")]
@@ -48,7 +50,8 @@ def read_metadata_file(metadata_file):
                                        "region":region, "country":country,"division":division,
                                        "domestic_wild":domestic_wild,"host_group":host_group, 
                                        "host_species":host_species,"date":date, 
-                                       "annotation_method":annotation_method, "clade":clade}
+                                       "annotation_method":annotation_method, "clade":clade,
+                                       "subtype":subtype}
     return(output_dict)
 
 
@@ -143,6 +146,7 @@ def write_new_alignment_files(input_alignment, output_filename, metadata_dict, f
         domestic_wild = metadata_dict[strain_name]['domestic_wild'].replace(" ","_")
         date = metadata_dict[strain_name]['date']
         clade = metadata_dict[strain_name]['clade']
+        subtype = metadata_dict[strain_name]['subtype']
         
         decimal_date = toYearFraction(date.replace("-XX",""))
 
@@ -150,7 +154,7 @@ def write_new_alignment_files(input_alignment, output_filename, metadata_dict, f
         furin_site_annotation = furin_annotation_dict[strain_name]['furin_cleavage_motif']
         furin_site_sequence = furin_seq_dict[strain_name]['cleavage_site_sequence']
 
-        new_header = "|".join([strain_name, str(decimal_date), date, host_group, region, country, genbank_id, accession, furin_site_annotation, furin_site_sequence, clade, host_species, domestic_wild])
+        new_header = "|".join([strain_name, str(decimal_date), date, host_group, region, country, genbank_id, accession, furin_site_annotation, furin_site_sequence, clade, subtype, host_species, domestic_wild])
 
         with open(output_filename, "a") as outfile: 
             outfile.write(">" + new_header + "\n" + sequence + "\n")

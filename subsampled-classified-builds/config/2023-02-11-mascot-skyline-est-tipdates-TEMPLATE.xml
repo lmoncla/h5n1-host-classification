@@ -1010,13 +1010,13 @@ name="alignment">
             <log idref="likelihood"/>
             <log idref="prior"/>
         </logger>
-        <logger id="treelog.t:aligned_h5n1_ha" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="5000" mode="tree">
+        <logger id="treelog.t:aligned_h5n1_ha" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="50000" mode="tree">
             <log id="TreeWithMetaDataLogger.t:aligned_h5n1_ha" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:aligned_h5n1_ha"/>
         </logger>
-        <logger id="typedTreelogger.t:aligned_h5n1_ha" spec="Logger" fileName="$(filebase).$(tree).trees" logEvery="5000" mode="tree">
+        <logger id="typedTreelogger.t:aligned_h5n1_ha" spec="Logger" fileName="$(filebase).$(tree).trees" logEvery="50000" mode="tree">
             <log id="structuredTreelog.t:aligned_h5n1_ha" spec="mascot.logger.StructuredTreeLogger" mascot="@Mascot.t:aligned_h5n1_ha"/>
         </logger>
-        <logger id="typedEventsTreelogger.t:aligned_h5n1_ha" spec="Logger" fileName="$(filebase).$(tree).events.trees" logEvery="5000" mode="tree">
+        <logger id="typedEventsTreelogger.t:aligned_h5n1_ha" spec="Logger" fileName="$(filebase).$(tree).events.trees" logEvery="50000" mode="tree">
             <log idref="mascotEventsTreelog.t:aligned_h5n1_ha"/>
         </logger>
         <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
